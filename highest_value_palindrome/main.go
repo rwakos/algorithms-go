@@ -69,6 +69,8 @@ func highestValuePalindrome(s string, n int32, k int32) string {
 		return "-1"
 	}
 	return strings.Join(result, "")*/
+
+	/* REF: https://medium.com/@lonell.liburd/highest-value-palindrome-1275edcd1430 */
 	var result = make([]string, n)
 	var max = int(n)
 	var moves = int(k)
