@@ -1,0 +1,8 @@
+Return the results of a tree table, you must say if it's the root, a leaf or inner. 
+
+Table structure: name TREE, fields ID and P_ID.
+
+Query:
+
+SELECT ID, IF(P_ID IS NULL, 'ROOT', IF(T.ID IN (SELECT P_ID FROM TREE), 'Inner', 'Leaf')) 
+FROM TREE AS T ORDER BY ID
