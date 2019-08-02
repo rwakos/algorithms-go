@@ -1,5 +1,8 @@
 package main
 
+/*
+https://www.hackerrank.com/challenges/weighted-uniform-string/problem
+*/
 import "fmt"
 
 func main() {
@@ -24,6 +27,7 @@ func weightedUniformStrings(s string, queries []int32) []string {
 		}
 	}
 
+	fmt.Println(values)
 	for _, v := range queries {
 		_, ok := values[v]
 		if ok {
