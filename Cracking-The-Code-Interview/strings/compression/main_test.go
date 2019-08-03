@@ -7,8 +7,8 @@ import (
 
 func TestCompressString(t *testing.T) {
 	result := compressString("aaabbb")
-	if result == "a3b2" {
-		t.Errorf("FAIL: this should be a3b2, not %s", result)
+	if result != "a3b3" {
+		t.Errorf("FAIL: this should be a3b3, not %s", result)
 	} else {
 		fmt.Println("PASS - Case 1")
 	}
