@@ -6,7 +6,6 @@ import "fmt"
 LinkedListNode simple linked list
 */
 type LinkedListNode struct {
-	//previous *LinkedListNode
 	data int
 	next *LinkedListNode
 }
@@ -19,7 +18,10 @@ func main() {
 		item := &LinkedListNode{v, nil}
 		l = addNode(item, l)
 	}
+	fmt.Println("Original: ")
+	printLinkedList(l)
 	l = removeDuplicates(l)
+	fmt.Println("After Removal: ")
 	printLinkedList(l)
 }
 
