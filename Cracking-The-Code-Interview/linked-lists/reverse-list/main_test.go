@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestReverseList(t *testing.T) {
+func TestIsEqualTo(t *testing.T) {
 	values := []int{7, 1, 6}
 	l1 := &LinkedListNode{}
 	for _, v := range values {

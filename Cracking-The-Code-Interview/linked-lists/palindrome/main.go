@@ -11,14 +11,25 @@ type LinkedListNode struct {
 }
 
 func main() {
-	values := []int{7, 1, 6}
-	var l1 LinkedListNode
 
-	for _, v := range values {
-		l1.addNode(v)
+}
+
+func (l *LinkedListNode) isEqualTo(lCompare *LinkedListNode) bool {
+	l2 := lCompare
+	l2.reverseList()
+
+	for l1 := l; l1 != nil; l1 = l1.next {
+		if l2 == nil {
+			return false
+		}
+
+		if l1.data != l2.data {
+			return false
+		}
+		l2 = l2.next
 	}
-	fmt.Println(l1.toString())
-	//l1.reverseList()
+
+	return true
 }
 
 func (l *LinkedListNode) reverseList() {
