@@ -11,14 +11,6 @@ type LinkedListNode struct {
 }
 
 func main() {
-	values := []int{7, 1, 6}
-	var l1 LinkedListNode
-
-	for _, v := range values {
-		l1.addNode(v)
-	}
-	fmt.Println(l1.toString())
-	//l1.reverseList()
 }
 
 func (l *LinkedListNode) reverseList() {
