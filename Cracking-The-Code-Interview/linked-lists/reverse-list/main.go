@@ -11,23 +11,24 @@ type LinkedListNode struct {
 }
 
 func main() {
+	values := []int{7, 1, 6}
+	var l1 LinkedListNode
 
+	for _, v := range values {
+		l1.addNode(v)
+	}
+	fmt.Println(l1.toString())
+	//l1.reverseList()
 }
 
-func reverseList(pList *LinkedListNode) *LinkedListNode {
-	pCurr := pList
-	var pTop *LinkedListNode
-	for {
-		if pCurr == nil {
-			break
-		}
-		pTemp := pCurr.next
-		pCurr.next = pTop
-		pTop = pCurr
-		pCurr = pTemp
+func (l *LinkedListNode) reverseList() {
+	reversed := &LinkedListNode{}
+	reversed = nil
+	for l1 := l; l1 != nil; l1 = l1.next {
+		node := &LinkedListNode{data: l1.data, next: reversed}
+		reversed = node
 	}
-
-	return pTop
+	*l = *reversed
 }
 
 func (l *LinkedListNode) toString() string {
@@ -40,16 +41,13 @@ func (l *LinkedListNode) toString() string {
 
 func (l *LinkedListNode) addNode(val int) {
 	if l == nil || (l.data == 0 && l.next == nil) {
-		l.data = val
+		*l = *&LinkedListNode{data: val, next: nil}
 		return
 	}
 
 	for l1 := l; l1 != nil; l1 = l1.next {
 		if l1.next == nil {
-			node := &LinkedListNode{
-				val,
-				nil,
-			}
+			node := &LinkedListNode{val, nil}
 			l1.next = node
 			return
 		}
