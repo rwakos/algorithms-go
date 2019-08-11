@@ -73,17 +73,19 @@ func (s *stack) popAtIndex(index int) (int, bool) {
 }
 
 func minMax(s *stack, value int) int {
-	min := 0
-	found := false
+	if len(*s) == 0 {
+		return -1
+	}
+	min := -1
 	index := len(*s)
+	found := false
 	for i, v := range *s {
-		if value != v && value < v {
+		if v > value {
 			if !found {
 				min = v
-				found = true
 				index = i
-			}
-			if found && v < min {
+				found = true
+			} else if v < min {
 				min = v
 				index = i
 			}
