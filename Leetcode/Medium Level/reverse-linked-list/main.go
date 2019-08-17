@@ -14,6 +14,7 @@ func main() {
 	fmt.Println(l2.toString())
 }
 
+//ListNode basic definition
 /*
 Runtime: 0 ms, faster than 100.00% of Go online submissions for Reverse Linked List II.
 Memory Usage: 2 MB, less than 75.00% of Go online submissions for Reverse Linked List II.
