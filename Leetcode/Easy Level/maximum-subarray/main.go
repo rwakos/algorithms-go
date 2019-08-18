@@ -22,7 +22,7 @@ func maxSubArray(nums []int) int {
 		return nums[0]
 	}
 	sum := 0
-	max := -1000000
+	max := -2147483648
 	for i := 0; i < len(nums); i++ {
 		sum = nums[i]
 		if sum > max {
