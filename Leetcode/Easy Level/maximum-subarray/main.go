@@ -8,13 +8,13 @@ Memory Usage: 3.3 MB, less than 57.14% of Go online submissions for Maximum
 */
 func main() {
 	a := []int{-2, 1, -3, 4, -1, 2, 1, -5, 4}
-	fmt.Println(maxSubArray(a)) //returns 6
+	fmt.Println(maxSubArray2(a)) //returns 6
 
 	a = []int{-1}
-	fmt.Println(maxSubArray(a)) //returns -1
+	fmt.Println(maxSubArray2(a)) //returns -1
 
 	a = []int{-1, -2}
-	fmt.Println(maxSubArray(a)) //returns -1
+	fmt.Println(maxSubArray2(a)) //returns -1
 }
 
 func maxSubArray(nums []int) int {
@@ -36,4 +36,32 @@ func maxSubArray(nums []int) int {
 		}
 	}
 	return max
+}
+
+/*
+Runtime: 4 ms, faster than 96.44% of Go online submissions for Maximum Subarray.
+Memory Usage: 3.3 MB, less than 100.00% of Go online submissions for Maximum Subarray.
+*/
+func maxSubArray2(nums []int) int {
+	if len(nums) == 0 {
+		return 0
+	}
+	MAX := nums[0]
+	maxSoFar := nums[0]
+
+	for i := 1; i < len(nums); i++ {
+		if nums[i] > (MAX + nums[i]) {
+			MAX = nums[i]
+			if maxSoFar <= MAX {
+				maxSoFar = MAX
+			}
+		} else {
+			MAX = (MAX + nums[i])
+			if maxSoFar <= MAX {
+				maxSoFar = MAX
+			}
+		}
+	}
+	return maxSoFar
+
 }
