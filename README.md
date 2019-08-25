@@ -1,4 +1,4 @@
-# Golang Algorithms, Interviews and more
+# Golang | Algorithms, Interviews and more
 
 I did this repo, for my personal training in Go, and also to help others that are new to learn a new language or to warm up for your next interview, feel free to comment or reach out, I hope you pass your job interview if that's the case! You can make it!
 
